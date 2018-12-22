@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
 
+import com.iu.listview_20181222_02.dapters.MemberAdapter;
 import com.iu.listview_20181222_02.datas.Member;
 
 import java.util.ArrayList;
@@ -14,6 +15,7 @@ public class MainActivity extends BaseActivity {
     //수강생 목록을 저장하는데 쓰는 ArrayList 생성
     List<Member> memberList = new ArrayList<Member>();
     ListView memberListView;
+    MemberAdapter memberAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +34,10 @@ public class MainActivity extends BaseActivity {
     @Override
     public void setupValues() {
         fillMembers();
+
+        memberAdapter = new MemberAdapter(mContext,memberList);
+
+        memberListView.setAdapter(memberAdapter);
     }
 
     void fillMembers(){
