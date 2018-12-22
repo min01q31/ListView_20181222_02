@@ -5,6 +5,11 @@ public class Member {
     private String address;
     private String profileImageUrl;
 
+    public Member(String name, String address, String profileImageUrl){
+        this.name = name;
+        this.address = address;
+        this.profileImageUrl = profileImageUrl;
+    }
     public String getName() {
         return name;
     }
