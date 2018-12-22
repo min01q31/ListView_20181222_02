@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.TextView;
 
 import com.iu.listview_20181222_02.R;
 import com.iu.listview_20181222_02.datas.Member;
@@ -35,6 +36,14 @@ public class MemberAdapter extends ArrayAdapter<Member> {
             row = inf.inflate(R.layout.member_list_item,null);
         }
 
+        TextView nameTxt = row.findViewById(R.id.nameTxt);
+        TextView addressTxt = row.findViewById(R.id.addressTxt);
+
+        Member data = mList.get(position);
+
+        nameTxt.setText(data.getName());
+        addressTxt.setText(data.getName());
+        
         return row;
     }
 }
